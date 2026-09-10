@@ -1,0 +1,403 @@
+:root {
+  --main-green: #4DA8A9;
+  --main-white: #FFFFFF;
+  --secondary-white: #F2F2F2;
+  --main-grey: #626262;
+  --secondary-grey: #767676;
+}
+*{
+	font-family: 'Roboto';
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+body{
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+	background-color: var(--main-white);
+	width: 100vw;
+	height: 100vh;
+}
+#bodyWrapper{
+	padding: 0px 0px 50px 0px;
+}
+header{
+	display: flex;
+	justify-content: flex-end;		
+	width: 100%;
+}
+object{
+	width: 30px;
+	height: 30px;
+}
+#icons{
+	position: relative;
+	left: -20px;
+	display: flex;
+	justify-content: space-evenly;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+#clearChat{
+  color: #8b0000;
+  cursor: pointer;
+}
+h3{
+	color: var(--secondary-grey);
+	font-weight: normal;
+    font-size: 18px;
+}
+object{
+	  pointer-events: none;
+}
+#dialogueInfoWrapper{
+	visibility: hidden;
+	background-color: var(--main-white);
+	top: 30px;
+	right: 100px;
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 1px 1px 4px rgba(126, 163, 164, 0.4);
+    border-radius: 20px 1px 20px 20px;
+    gap: 10px;
+    position: relative;/* 01.03 */
+    z-index: 2; /* 01.03 */
+}
+
+#dialogueInfoWrapper object{
+	width: 20px;
+	height: 20px;
+}
+#dialogueInfoWrapper div{
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 25px 10px 20px;
+}
+  #privacy-policy a {
+    color: var(--secondary-grey);
+    text-decoration: none;
+}
+#privacy-policy {
+    cursor: pointer;
+}
+main{
+  /*position: relative; 01.03 */
+  z-index: 1; /* 01.03 */
+	max-height:60%;
+	overflow:auto;
+	width: calc(85vw - 55px);
+}
+ul{
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+li{
+	font-weight: normal;
+	font-size: 18px;
+}
+.userInput{
+	background-color: var(--secondary-white);
+	color: var(--main-grey);
+	padding: 15px 15px 15px 15px;
+	border-radius: 25px 1px 25px 25px;
+    margin-left: auto;
+	margin-right: 10px;
+	word-wrap: break-word;
+
+}
+.bot__output{
+	background-color: var(--main-green);
+	color: var(--main-white);
+	padding: 15px 15px 15px 15px;
+	border-radius: 1px 25px 25px 25px;
+
+  white-space: pre-line;
+
+}
+
+.bot__output1{
+	background-color: var(--main-green);
+	color: var(--main-white);
+	padding: 15px 15px 15px 15px;
+	border-radius: 1px 25px 25px 25px;
+
+  white-space: pre-line;
+
+}
+
+.userInput, .bot__output, .bot__output1 {
+    max-width: 70%; /* Устанавливаем максимальную ширину сообщений */
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
+.like, .dislike, .regenerate {
+    /*position: absolute;
+    margin-bottom: -10px;*/
+    z-index: 3;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: inline-block;
+    width: 24px; /* Ширина кнопок */
+    height: 24px; /* Высота кнопок */
+    background-repeat: no-repeat; /* Предотвращает повторение изображения */
+    background-position: center; /* Выравнивание изображения по центру */
+    border: none;
+    cursor: pointer;
+}
+
+.like {
+    background-image: url('../resources/like_off.svg'); /* Путь к SVG изображению лайка */
+}
+
+.dislike {
+    background-image: url('../resources/disslike_off.svg'); /* Путь к SVG изображению дизлайка */
+}
+
+.regenerate {
+background-image: url('../resources/REgen.svg'); /* Путь к SVG изображению дизлайка */
+}
+
+#textInput, #textInput:focus{
+    width: calc(65vw - 105px);
+	font-size: 20px;
+	outline: none;
+	border:none;
+	height: 20px;
+	background-color: var(--secondary-white);
+	color: var(--secondary-grey);
+    max-height: 10vh;
+    overflow:auto;
+}
+#sendBtn object{
+	height: 30px;
+	width: 30px;
+}
+#inputBar{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	background-color: var(--secondary-white);
+	padding: 15px;
+	border-radius: 10px;
+}
+footer{
+  display: flex;
+  justify-content: center;
+    flex-direction: column; /* Изменено с row на column */
+    align-items: center;
+}
+
+.dark-theme{
+	height: 42px;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#info-ico{
+	width: 40px;
+	height: 40px;
+}
+
+#scroller::-webkit-scrollbar-button {
+  display: none;
+}
+
+#scroller::-webkit-scrollbar {
+  width: 10px; /* Ширина скроллбара */
+}
+
+#scroller::-webkit-scrollbar-thumb {
+  background-color: var(--main-green); /* Цвет ползунка скроллбара */
+  border-radius: 5px; /* Скругление углов ползунка скроллбара */
+}
+
+#scroller::-webkit-scrollbar-track {
+  background-color: var(--main-white); /* Цвет трека скроллбара */
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+    font-family: 'Roboto';
+    background-color: #fefefe;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 60%;
+    width: 100%; /* Ensures the width is always 100% of the parent */
+}
+
+#modal-content a {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+#acceptBtn {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 0;
+    background-color: var(--main-green);
+    color: var(--main-white);
+	cursor: pointer;
+}
+
+.loader_custom_zalupa{
+  width: 15px;
+  height: 15px;
+  margin: 0px 20px 0px 20px
+}
+
+.loader {
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  background: #FFF;
+  box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  box-sizing: border-box;
+  animation: shadowPulse 1s linear infinite;
+}
+
+#textInput::-webkit-scrollbar-button {
+  display: none;
+}
+
+#textInput::-webkit-scrollbar {
+  width: 4px; /* Ширина скроллбара */
+  left: 0px;
+
+}
+
+#textInput::-webkit-scrollbar-thumb {
+  background-color: var(--main-green); /* Цвет ползунка скроллбара */
+  border-radius: 1px; /* Скругление углов ползунка скроллбара */
+}
+
+#textInput::-webkit-scrollbar-track {
+  background-color: var(--main-white); /* Цвет трека скроллбара */
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #FFF;
+    box-shadow: -24px 0 #838383, 24px 0 #FFF;
+  }
+  66% {
+    background: #838383;
+    box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  }
+  100% {
+    background: #FFF;
+    box-shadow: -24px 0 #FFF, 24px 0 #838383;
+  }
+}
+      .dark-theme{
+        height: 42px;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background: url("../resources/theme.svg") no-repeat;
+      }
+
+          @media only screen and (max-width: 600px) {
+        footer {
+            padding-bottom: 7%; /* Увеличиваем пустое пространство на мобильных устройствах */
+        }
+        main{
+          max-height:55%;
+          overflow:auto;
+          width: calc(85vw - 55px);
+        }
+    }
+
+/*24.02 круг для анимки*/
+#circle {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    transition: width 0.5s ease-out, height 0.5s ease-out, top 0.5s ease-out, left 0.5s ease-out;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Чтобы круг был под кнопкой */
+    pointer-events: none; /* Чтобы круг не мешал взаимодействию с кнопкой */
+}
+.disclaimer {
+    color: var(--main-grey); /* Цвет текста */
+    margin-top: 10px; /* Отступ сверху */
+    font-size: 14px; /* Размер шрифта */
+    align-items: center;
+    text-align: center;
+}
+
+li {
+    position: relative;
+}
+
+#clearChat object{
+      width: 26px;
+      height: 26px;
+  }
+
+#upload {
+    display: none; /* Скрыть стандартный input type="file" */
+}
+
+.attach-button {
+    display: inline-block; /* Делаем элемент строчно-блочным для применения размеров */
+    max-width: 17%; /* Максимальная ширина кнопки */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы кнопки */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+    white-space: nowrap; /* Запрещаем тексту переноситься на новую строку */
+    background-color: var(--main-green); /* Цвет фона */
+    color: var(--main-white); /* Цвет текста */
+    padding: 10px 20px; /* Паддинги */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Курсор в виде указателя */
+    font-size: 16px; /* Размер шрифта */
+    margin-right: 10px; /* Отступ справа, чтобы отделить от textInput */
+}
+
+#inputBar {
+    align-items: center; /* Центрировать содержимое по вертикали */
+    display: flex; /* Использовать flexbox для содержимого */
+    justify-content: center; /* Центрировать содержимое по горизонтали */
+}
+h6 {
+      font-weight: normal;
+      font-size: 18px;
+      font-size: 1.5em; /* Установите желаемый размер шрифта */
+}
